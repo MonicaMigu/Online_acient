@@ -254,3 +254,9 @@
   padding: 1%;
 
 }
+
+.btn-warning-small:focus {
+  color: #fff;
+  background: #b24722;
+  border-color: #d29637;
+}
