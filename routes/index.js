@@ -14,6 +14,7 @@ router.get('/', function (req, res, next) {
       traces = [];
       number = [];
       console.log("----------------------------------------------");
+      var change=[24 ,28 ,16 ,13 ,2];
       for (var i = 0; i < 8; i++) {
         var random = Math.floor(Math.random() * 30) + 1;
         var judge=true;
@@ -34,14 +35,28 @@ router.get('/', function (req, res, next) {
           number.push(random);
         }
       }
+      console.log("----------------------------------------------");
+      var image;
       for (var i = 0; i < trace.length; i++) {
         for (var j = 0; j < 8; j++) {
           if (trace[i].trace_no == number[j]) {
+             image=0;
+          
+            for (var l=0; l<5 ;l++){
+            
+              if(change[0]==number[j]){
+                image=1;
+                break;
+              }
+            }
+        
+            trace[i]["image"]=image;
+            console.log(image);
             traces.push(trace[i]);
           }
         }
       }
-      console.log("----------------------------------------------");
+    
       console.log("----------------------------------------------");
       number=[];
       carousel=[];
