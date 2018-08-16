@@ -326,10 +326,10 @@
                         <div class="overlay">
                             <div class="recent-work-inner">
                                 <h3>
-                                    <a href="#"><%= item.trace_name %></a>
+                                    <a href="javascript: return false;" onclick="history(<%= item.trace_no %>)" ><%= item.trace_name %></a>
                                 </h3>
                                 <p><%= item.introduce.substr(0,40) %>...</p>
-                                <a class="preview" href="javascript: return false;" onclick="history(<%= item.trace_no %>)" rel="prettyPhoto">
+                                <a class="preview" src="images/remains/small/<%= item.trace_name %>1.jpg" rel="prettyPhoto">
                                     <i class="fa fa-eye"></i> View</a>
                             </div>
                         </div>
@@ -388,7 +388,7 @@
 
 
 </body>
-<script>
+<script type="text/javascript">
     $(function () {
       
         $("#carousel0").addClass("item active");
@@ -424,7 +424,7 @@
         if (city != "" && trace != "") {
             location.href = "/showRemains?city=" + city + "&trace=" + trace
         } else {
-            alert(古蹟或縣市不能為空);
+            alert("古蹟或縣市不能為空");
         }
     }
 
@@ -441,11 +441,11 @@
             success: function (data) {
                 console.log(data);
                 console.log(data.traces[0].city_no);
-                var city=data.traces[0].city_no;
+                var judge=true;
                 var trace=data.traces[0].trace_no;
                
                 console.log(trace);
-                location.href="/showRemains?city=" + city + "&trace=" + trace
+                location.href="/historicalSnapshots?judge=" + judge + "&trace=" + trace
             }
         });
 

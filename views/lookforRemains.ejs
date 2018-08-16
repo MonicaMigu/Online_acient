@@ -138,6 +138,17 @@
                 </div>
                 <br>
                 <br>
+                <div class="col-sm-12 container remains" id="myDIV0" style="display: block;">
+                    <div class="row">
+                        <div class="portfolio-items ">
+
+                            <!--/.portfolio-item-->
+
+                            <!--/.portfolio-item-->
+
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-12 container " id="myDIV1" style="display: none;">
                     <div class="row">
                         <div class="portfolio-items ">
@@ -465,10 +476,41 @@
     <script src="js/wow.min.js"></script>
     <script>
 
-        $(function () {
-            searchTrace(1, "myDIV1");
-            $("#first").addClass("btn btn-warning btn-lg active");
-        });
+$(function () {
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: "/lookforRemains/alltraces",
+        success: function (data) {
+            $("#myDIV0").empty();
+           
+            var html = "";
+            for (var i = 0; i < data.traces.length; i++) {
+                trace = data.traces[i];
+                console.log(trace.trace_name);
+                html += '<div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3 remains">';
+                html += '<div class="recent-work-wrap">';
+                html += '<img class="img-responsive" src="';
+                html += 'images/remains/small/';
+                html += trace.trace_name + "2.jpg";
+                html += '" alt="">';
+                html += '<a href="javascript: return false;" onclick="showRemains(';
+                html += trace.trace_no;
+                html += ')">';
+
+                html += trace.trace_name;
+
+                html += '</a>';
+                html += '</div>';
+                html += '</div>';
+
+            }
+            $("#myDIV0").append(html);
+           
+
+        }
+    });
+});
         function myFunction1(city) {
             searchTrace(city, "myDIV1");
 
@@ -659,7 +701,7 @@
                         div1.style.display = "none";
                     }
                     var x;
-                    for (var i = 1; i <= 7; i++) {
+                    for (var i = 0; i <= 7; i++) {
                         if (i == city) {
                             continue;
                         } else {

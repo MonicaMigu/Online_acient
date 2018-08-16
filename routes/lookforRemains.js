@@ -37,6 +37,17 @@ router.post('/traces', function(req, res, next) {
    
 });
 
+router.post('/alltraces', function (req, res, next) {
+    
+   pool.query('select * from trace  join city on city.city_no=trace.city_no  ' ,function (error, results, fields) {
+    console.log(results);
+      res.json({
+        traces: results,
+      })
+    });
+  
+  });
+
 router.post('/showRemains', function (req, res, next) {
     var tna = req.param("trace").trim();
     console.log(tna);

@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://masonry.desandro.com/jquery.masonry.min.js"></script>
-    
+
 </head>
 <!--/head-->
 
@@ -107,25 +107,25 @@
                 <div class="col-sm-12 container county center">
                     <ul class="portfolio-filter text-center city">
                         <li>
-                            <a class="btn btn-warning btn-lg" onclick="myFunction1(1)">台北市</a>
+                            <a class="btn btn-warning btn-lg" onclick="myFunction(1)">台北市</a>
                         </li>
                         <li>
-                            <a class="btn btn-warning btn-lg" onclick="myFunction2(2)">新北市</a>
+                            <a class="btn btn-warning btn-lg" onclick="myFunction(2)">新北市</a>
                         </li>
                         <li>
-                            <a class="btn btn-warning btn-lg" onclick="myFunction3(3)">基隆市</a>
+                            <a class="btn btn-warning btn-lg" onclick="myFunction(3)">基隆市</a>
                         </li>
                         <li>
-                            <a class="btn btn-warning btn-lg" onclick="myFunction4(4)">桃園市</a>
+                            <a class="btn btn-warning btn-lg" onclick="myFunction(4)">桃園市</a>
                         </li>
                         <li>
-                            <a class="btn btn-warning btn-lg" onclick="myFunction5(5)">新竹縣</a>
+                            <a class="btn btn-warning btn-lg" onclick="myFunction(5)">新竹縣</a>
                         </li>
                         <li>
-                            <a class="btn btn-warning btn-lg" onclick="myFunction6(6)">新竹市</a>
+                            <a class="btn btn-warning btn-lg" onclick="myFunction(6)">新竹市</a>
                         </li>
                         <li>
-                            <a class="btn btn-warning btn-lg" onclick="myFunction7(7)">苗栗縣</a>
+                            <a class="btn btn-warning btn-lg" onclick="myFunction(7)">苗栗縣</a>
                         </li>
 
                     </ul>
@@ -440,6 +440,9 @@
                 </div>
             </div>
         </div>
+        <input type="hidden" id="judge" value="<%= judge %>">
+        <input type="hidden" id="trace" value="<%= trace %>">
+        <input type="hidden" id="city" value="<%= city %>">
     </footer>
 
     <script src="js/jquery.js"></script>
@@ -448,59 +451,104 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/wow.min.js"></script>
-   
-        
-               
-                   
+
+
+
+
 
     <script>
-        function myFunction1(city) {
-            searchTrace(city, "myDIV" + city)
+        $(function () {
+            var judge = $("#judge").val();
+
+            if (judge == "true") {
+                console.log(judge);
+                var city = $("#city").val();
+                console.log(city);
+                searchTrace(city, "myDIV" + city, true);
+
+            } else {
+                var htmlContent = "";
+                htmlContent += '<div class="col-sm-12 container remains" id="myDIVa0';
+                htmlContent += '"style="display: block;">';
+                htmlContent += '<div class="row">';
+                htmlContent += '<div class="portfolio-items ">';
+                htmlContent += '</div>';
+                htmlContent += '</div>';
+                htmlContent += '</div>';
+                $("#myDIV3a").append(htmlContent);
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: "/historicalSnapshots/alltraces",
+                    success: function (data) {
+
+
+                        var html = "";
+                        html += '<div id="_container" style="  width:100%; overflow:hidden; margin:0 auto;"> ';
+                        for (var i = 0; i < data.traces.length; i++) {
+                            trace = data.traces[i];
+
+                            console.log(trace);
+                            html += ' <div class="content_box">';
+
+                            html += '<a href="javascript: return false;" onclick="showRemains(';
+                            html += trace.trace_no;
+                            html += ')">';
+                            html += '<img class="img-responsive" src="';
+                            html += 'images/look_for_history/';
+                            html += trace.english_name + '/' + trace.path + '/' + trace.pic_name;
+                            html += '.jpg"';
+                            html += '" alt="">';
+                            html += '</a>';
+                            html += '</div>';
+
+                            // html += '</div>';
+                            // html += '</div>';
+
+                        }
+                        html += '</div>';
+                        $("#myDIVa0").append(html);
+
+                        // var x;
+                        // for (var i = 0; i <= length; i++) {
+                        //     if (i == now) {
+                        //         // $("#myDIVa" + now).waterfall();
+                        //         //                     $("#myDIVa" + now)
+                        //         // .data('bootstrap-waterfall-template', $("#myDIVa" + now).html())
+                        //         // .waterfall();
+                        //         continue;
+                        //     } else {
+                        //         x = document.getElementById("myDIVa0");
+                        //         x.style.display = "none";
+                        //     }
+                        // }
+
+                    }
+
+                });
+
+                $('#_container').imagesLoaded(function () {
+                    $('#_container').masonry({
+                        itemSelector: '.content_box',
+                        columnWidth: 200,
+                        isFitWidth: true,//自适应宽度
+                        isResizableL: true,// 是否可调整大小
+                        isRTL: false,//使用从右到
+                        animate: true
+                    });
+                });
+            }
+
+
+        });
+
+        function myFunction(city) {
+            searchTrace(city, "myDIV" + city, false)
 
         }
 
 
 
-
-        function myFunction2(city) {
-            searchTrace(city, "myDIV" + city)
-            // var div2 = document.getElementById("myDIV2");
-            // if (div2.style.display === "none") {
-            //     div2.style.display = "block";
-            // } else {
-            //     div2.style.display = "none";
-            // }
-            // var x;
-            // for (var i = 1; i <= 7; i++) {
-            //     if (i == 2) {
-            //         continue;
-            //     } else {
-            //         x = document.getElementById("myDIV" + i);
-            //         x.style.display = "none";
-            //     }
-            // }
-
-        }
-
-
-        function myFunction3(city) {
-            searchTrace(city, "myDIV" + city)
-
-        }
-
-
-        function myFunction4(city) {
-            searchTrace(city, "myDIV" + city)
-        }
-        function myFunction5(city) {
-            searchTrace(city, "myDIV" + city)
-        }
-        function myFunction6(city) {
-            searchTrace(city, "myDIV" + city)
-        }
-        function myFunction7(city) {
-            searchTrace(city, "myDIV" + city)
-        }
 
 
 
@@ -558,8 +606,14 @@
             }
         }
 
-        function searchTrace(city, id) {
-
+        function searchTrace(city, id, judge) {
+            var tno = "";
+            var number = "";
+            var length = "";
+            if (judge) {
+                tno = $("#trace").val();
+               
+            }
 
             $.ajax({
                 type: 'POST',
@@ -571,18 +625,23 @@
                 success: function (data) {
                     $("#" + id).empty();
                     $("#myDIV3a").empty();
-                    console.log(id);
+                  
                     var html = "";
                     var htmlContent = "";
                     for (var i = 0; i < data.traces.length; i++) {
                         trace = data.traces[i];
-                        console.log(trace.trace_name);
-
+                      
+                        length = data.traces.length;
                         html += '<a href="javascript: return false;" onclick="searchImage(';
                         html += trace.trace_no;
                         html += ',';
                         html += data.traces.length
                         html += ',';
+                        if (judge) {
+                            if (tno == trace.trace_no) {
+                                number = i;
+                            }
+                        }
                         html += i;
                         html += ')">';
                         html += '<button class="btn btn-warning-small">';
@@ -618,9 +677,15 @@
                             x.style.display = "none";
                         }
                     }
-
+                    if (judge) {
+                      
+                       
+                        searchImage(tno, length, number);
+                    }
                 }
+
             });
+
         }
 
         function searchImage(tno, length, now) {
@@ -635,7 +700,7 @@
                         "trace": tno
                     },
                     success: function (data) {
-
+                        console.log(data);
                         $("#myDIVa" + now).empty();
 
                         var html = "";
@@ -660,12 +725,12 @@
                             // html += '</a>';
                             // html += '</li>';
                             // html += '</ul>';
-                           
+
                             // html += '<div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3 remains">';
                             // html += '<div class="recent-work-wrap">';
-                         
+
                             html += ' <div class="content_box">';
-                           
+
                             html += '<a href="javascript: return false;" onclick="showRemains(';
                             html += trace.trace_no;
                             html += ')">';
@@ -676,7 +741,7 @@
                             html += '" alt="">';
                             html += '</a>';
                             html += '</div>';
-                            
+
                             // html += '</div>';
                             // html += '</div>';
 
@@ -697,23 +762,23 @@
                                 x.style.display = "none";
                             }
                         }
-
+                        $('#_container').imagesLoaded(function () {
+                            $('#_container').masonry({
+                                itemSelector: '.content_box',
+                                columnWidth: 200,
+                                isFitWidth: true,//自适应宽度
+                                isResizableL: true,// 是否可调整大小
+                                isRTL: false,//使用从右到
+                                animate: true
+                            });
+                        });
                     }
 
                 });
             } else {
                 div4.style.display = "none";
             }
-            $('#_container').imagesLoaded(function () {
-                $('#_container').masonry({        
-                    itemSelector: '.content_box',
-                    columnWidth: 200,
-                    isFitWidth:true,//自适应宽度
-    isResizableL:true,// 是否可调整大小
-    isRTL:false,//使用从右到
-                    animate:true
-                });
-        });
+
 
 
         }
