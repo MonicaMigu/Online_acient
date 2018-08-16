@@ -260,3 +260,16 @@
   background: #b24722;
   border-color: #d29637;
 }
+
+.reference{
+  background: none repeat scroll 0 0 #F3F3F3;
+  border-radius: 3px;
+  padding: 30px 30px;
+  position: relative;
+  margin-bottom: 8%;
+
+}
+
+#more{
+  display: none;
+}
