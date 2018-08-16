@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>遠古遺跡</title>
+
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/icon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img class="logo" src="images/logo.png" alt="logo">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- <li class="active"><a href="index.html">回首頁</a></li> -->
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">  找尋遺跡 <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">台北市</a></li>
+                                <li><a href="pricing.html">新北市</a></li>
+                                <li><a href="404.html">基隆市</a></li>
+                                <li><a href="shortcodes.html">桃園市</a></li>
+                                <li><a href="shortcodes.html">新竹縣</a></li>
+                                <li><a href="shortcodes.html">新竹市</a></li>
+                                <li><a href="shortcodes.html">苗栗縣</a></li>   
+                            </ul>
+                        </li> -->
+                        <li>
+                            <a href="/lookforRemains">找尋遺跡</a>
+                        </li>
+                        <li>
+                            <a href="/activity">活動宣傳</a>
+                        </li>
+                        <li>
+                            <a href="/peopleStory">人物故事</a>
+                        </li>
+
+                        <li>
+                            <a href="/historicalSnapshots">歷史剪影</a>
+                        </li>
+                        <li>
+                            <a href="/aboutus">關於我們</a>
+                        </li>
+
+                        <!-- <li><a href="blog.html">Blog</a></li> 
+                        <li><a href="contact-us.html">Contact</a></li>                         -->
+                    </ul>
+                </div>
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+
+    </header>
+    <!--/header-->
+
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                    
+               <!-- <% carousel.forEach(function(item){ %>
+                    <div class="item" style="background-image: url(images/remains/<%= item.english_name %>/<%= item.trace_name %>/<%= item.trace_name %>.jpg)" id="carousel<%= item.carousel %>">
+                        <div class="container">
+                            <div class="row slide-margin">
+                                <div class="col-sm-6">
+                                    <div class="carousel-content">
+                                        <h1 class="animation animated-item-1">
+                                            <%= item.trace_name %>
+                                        </h1>
+                                        <h2 class="animation animated-item-2">
+                                            <%= item.introduce.substr(0,40) %>...</h2>
+                                        <a class="btn-slide animation animated-item-3" href="javascript: return false;" onclick="history(<%= item.trace_no %>)">Read More</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                    <div class="slider-img">
+                                    <img src="images/slider/img1.png" class="img-responsive">
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %> -->
+                <!--/.item-->
+                <div class="item active" style="background-image: url(images/activity/cloud_sea.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content slide">
+                                    <h1 class="animation animated-item-1">山嵐雲海一陳金海彩墨畫展</h1>
+                                    <h2 class="animation animated-item-2">該展以「山嵐雲海」為主題，除以彩墨山水為主之外，同時也展出氣勢磅礴的大瀑布、牡丹，以及新作梯田風光。陳金海表示：花不能歌，鳥代也，山不能飛，雲飛也；不論是流雲、雲瀑、山嵐都能使山水增色不少，形成氤氳氛圍，呈現山水靈動的生命力。
+
+                                    </h2>
+                                    <a class="btn-slide animation animated-item-3" href="https://www.cksmh.gov.tw//index.php?code=list&flag=detail&ids=85&article_id=14211" target="_blank">Read More</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <!-- <div class="slider-img">
+                                    <img src="images/slider/img1.png" class="img-responsive">
+                                </div> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--/.item-->
+
+                <div class="item" style="background-image: url(images/activity/saitama_light.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content slide">
+                                    <h1 class="animation animated-item-1">璞玉發光－107年全國藝術行銷活動得獎作品展</h1>
+                                    <h2 class="animation animated-item-2">文化部所屬國立新竹生活美學館自99年開始辦理「璞玉發光-藝術行銷活動」，徵件類別分為國畫及西畫，最初僅於桃竹苗4縣市收件，102年起擴及到全國徵件，以繪畫競賽形式選出優秀畫作。</h2>
+                                    <a class="btn-slide animation animated-item-3" href="http://www.tshs.ntpc.gov.tw/xmdoc/cont?xsmsid=0G245656224351531469&sid=0I212383506348688659" target="_blank">Read More</a>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--/.item-->
+
+                <div class="item" style="background-image: url(images/activity/00e242199266b4ebd3f49721a61b5a0a_2_-1_art.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1" style="color:#000; margin-bottom: 8%;">紅茶八分糖─共茗書畫社聯展</h1>
+                                    <h2 class="animation animated-item-2" style="color:#000;">本次展覽主題「紅茶八分糖」，發想自鮮紅的淡水夕陽與八位創作者共舞，意旨將淡水的色彩與創作者交織出一場甜蜜的藝術饗宴，預計將展出作品40餘幅，匯集這一年來，大家畢業後的新作，在人生的交叉路口所碰撞出的火花，邀約民眾來淡水漁人碼頭跟他們一起品茗、賞畫、看夕陽。</h2> 
+                                    <a class="btn-slide animation animated-item-3" href="http://www.tshs.ntpc.gov.tw/xmdoc/cont?xsmsid=0G245656224351531469&sid=0I225510516533234502" target="_blank">Read More</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.carousel-inner-->
+        </div>
+        <!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section>
+    <!--/#main-slider-->
+
+    <section id="feature">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>網頁導覽</h2>
+                <p class="lead">Website Guide</p>
+            </div>
+            
+              
+            <div class="row">
+
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                                <a href="/lookforRemains?city=1&trace=1"><i class="fa fa-search"></i></a>
+                            <h2>找尋遺跡</h2>
+                            <h3>利用縣市分布，找尋您想要找的遺跡</h3>
+                        </div>
+                    </div>
+                    <!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                                <a href="/activity"><i class="fa fa-bullhorn"></i></a>
+                            <h2>活動宣傳</h2>
+                            <h3>關於古蹟藝文活動，都在這裡呈現給你</h3>
+                        </div>
+                    </div>
+                    <!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                                <a href="/peopleStory"><i class="fa fa-book"></i></a>
+                            <h2>人物故事</h2>
+                            <h3>帶你一探究竟歷史人物一生經歷的風霜</h3>
+                        </div>
+                    </div>
+                    <!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                                <a href="/historicalSnapshots"><i class="fa fa-picture-o"></i></a>
+                            <h2>歷史剪影</h2>
+                            <h3>一覽古蹟風貌，帶領你進入古蹟的世界</h3>
+                        </div>
+                    </div>
+                    <!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                                <a href="/aboutus"><i class="fa fa-users"></i></a>
+                            <h2>關於我們</h2>
+                            <h3>關於古慕琦兵的大小事，以及遠古遺跡網頁的由來</h3>
+                        </div>
+                    </div>
+                    <!--/.col-md-4-->
+
+                </div>
+                <!--/.services-->
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </section>
+    <!--/#feature-->
+
+    <!-- ---------------------------------------------------------------------- -->
+    <section id="services" class="service-item">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>找尋遺跡</h2>
+                <p class="lead"> Look For Remains</p>
+            </div>
+
+            <div class="row lookfor">
+                <form class="form-inline" id="searchTrace">
+                    <div class="col-sm-12 col-md-4">
+
+                        <div class="dropdown">
+
+                            <select class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" style="width:100%" name="city" id="city">
+                                <option value="">縣市</option>
+                                <% items.forEach(function(item){ %>
+                                    <option value="<%= item.city_no %>">
+                                        <%= item.city_name %>
+                                    </option>
+                                    <% }); %>
+                            </select>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dropdown">
+
+                            <select class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" style="width:100%" name="trace" id="trace"
+                                value="古蹟">
+                                <option value="">古蹟</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-2">
+                        <button type="button" class="btn btn-warning btn-lg" style="width:100%" onclick="lookforRemains()">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </section>
+    <!--/#services-->
+    <!-- ---------------------------------------------------------------------- -->
+
+    <section id="recent-works">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>歷史剪影</h2>
+                <p class="lead">Historical Snapshots</p>
+            </div>
+
+            <div class="row">
+                    <% traces.forEach(function(item){ %>
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    
+                    <div class="recent-work-wrap">
+                        <img class="img-responsive" src="images/remains/small/<%= item.trace_name %>1.jpg" alt="">
+                        <div class="overlay">
+                            <div class="recent-work-inner">
+                                <h3>
+                                    <a href="#"><%= item.trace_name %></a>
+                                </h3>
+                                <p><%= item.introduce.substr(0,40) %>...</p>
+                                <a class="preview" href="javascript: return false;" onclick="history(<%= item.trace_no %>)" rel="prettyPhoto">
+                                    <i class="fa fa-eye"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+
+                
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </section>
+    <!--/#recent-works-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2018 國立臺北商業大學 資訊管理系
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li>
+                            <a href="/lookforRemains?city=1&trace=1">找尋遺跡</a>
+                        </li>
+                        <li>
+                            <a href="/activity">活動宣傳</a>
+                        </li>
+                        <li>
+                            <a href="/peopleStory">人物故事</a>
+                        </li>
+
+                        <li>
+                            <a href="/historicalSnapshots">歷史剪影</a>
+                        </li>
+                        <li>
+                            <a href="/aboutus">關於我們</a>
+                        </li>
+                        <li>
+                            <a href="#">回到頂部</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+
+
+</body>
+<script>
+    $(function () {
+      
+        $("#carousel0").addClass("item active");
+        searchTrace();
+    })
+    function searchTrace() {
+        var city = $("#city").val();
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/traces",
+            data: {
+                "city": city
+            },
+            success: function (data) {
+                $("#trace").empty();
+                $("#trace").append(new Option("古蹟", "", true));
+                for (var i = 0; i < data.traces.length; i++) {
+                    trace = data.traces[i];
+                    $("#trace").append(new Option(trace.trace_name, trace.trace_no, false));
+                }
+            }
+        });
+    }
+
+    $("#city").change(function () {
+        searchTrace()
+    });
+
+    function lookforRemains() {
+        var city = $("#searchTrace").find("#city").val();
+        var trace = $("#searchTrace").find("#trace").val();
+        if (city != "" && trace != "") {
+            location.href = "/showRemains?city=" + city + "&trace=" + trace
+        } else {
+            alert(古蹟或縣市不能為空);
+        }
+    }
+
+    function history(trace){
+        
+        console.log(trace);
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/history",
+            data: {
+                "trace": trace
+            },
+            success: function (data) {
+                console.log(data);
+                console.log(data.traces[0].city_no);
+                var city=data.traces[0].city_no;
+                var trace=data.traces[0].trace_no;
+               
+                console.log(trace);
+                location.href="/showRemains?city=" + city + "&trace=" + trace
+            }
+        });
+
+    }
+</script>
+
+</html>
