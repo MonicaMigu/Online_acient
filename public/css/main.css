@@ -1,5 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
-
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
+*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 
 /*************************
 *******Typography******
@@ -7,7 +8,7 @@
 
 body {
   background: #fff;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Noto Sans TC', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   /* 'Open Sans', sans-serif; */
   color:#4e4e4e;
   line-height: 22px;
@@ -28,7 +29,7 @@ h4,
 h5,
 h6 {
   font-weight: 600; 
-  font-family:  -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:  'Noto Sans TC', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color:#4e4e4e;
 }
 
